@@ -6,6 +6,7 @@ public class Test {
                 for (int i = 1; i <= 10; i++) {
                         System.out.println(closure.create(i).increment(i));
                 }
+                System.out.println("测试");
         }
  
         class InnerClosure {
