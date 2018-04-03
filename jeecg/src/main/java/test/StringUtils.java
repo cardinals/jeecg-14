@@ -555,17 +555,64 @@ public class StringUtils extends StringUtil{
      }  
      return map;  
  }  
-	public static void main(String[] args) {
-		try {
-			
-			System.out.println(getGeocoderLatitude("116.311209,40.037105"));
-			System.out.println(getLatAndLngByAddress("上地雅美科技园"));
-			System.out.println(getAddressLatitude("116.311209,40.037105"));;
-		} catch (IOException e) {
-			e.printStackTrace();
+ 
+ /**
+  * 将空格自动替换成%20
+  * @param str
+  * @return
+  */
+	public static String replace(String str){
+		return str.toString().replaceAll(" " , "%20");
+	}
+	
+	/**
+	 * 最后一个字符串长度
+	 * @param str
+	 * @return
+	 */
+	public static int strlen(String str){
+		String[] len= str.split(" ");
+		
+		return  len[len.length-1].length();
+	}
+	
+	
+	public static int firstStr(String str){
+		char[] a=str.toCharArray();
+		
+		for(int i=0;i<a.length;i++ ){
+			if(!str.substring(0,i).contains(a[i]+"")&&!str.substring(i+1).contains(a[i]+"")){
+				return i;
+				
+				
+			}
+	
 		}
+		return -1;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		int a,b=3;
+		
+//		System.out.println(strlen("welcome to China"));
+		
+		System.out.println(firstStr("googglecaeaclbb"));
 		
 		
+		
+//		System.out.println(replace("ha ha ha a"));
+		
+//		try {
+//			
+//			System.out.println(getGeocoderLatitude("116.311209,40.037105"));
+//			System.out.println(getLatAndLngByAddress("上地雅美科技园"));
+//			System.out.println(getAddressLatitude("116.311209,40.037105"));;
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+	
 		
 //	System.out.println(	checkDifferent("abcdefghijklmnopqrstuvwxyzz"));
 			
